@@ -2,15 +2,31 @@
     let answered = Persistence.getItem('answer') || "";
     let correct = "{{Answer}}";
     let the_input = document.querySelector("my-input");
-    if(answered) {
-        // sensitive if answered in mixed case
-        let case_sens = answered.toLowerCase() !== answered;
+
+    let case_sens = answered != answered.toLowerCase();
+
+    function compare() {
+        if( ! answered ) return 'ground';
+        let ans = answered, tru = correct;
         if(!case_sens) {
-            answered = answered.toLowerCase();
-            correct = correct.toLowerCase();
+            ans = answered.toLowerCase();
+            tru = correct.toLowerCase();
         }
-        the_input.classList.add(answered === correct ? 'correct' : 'missed');
-    } else {
-        the_input.classList.add('ground');
+        if( ans !== tru ) return 'missed';
+        return 'correct'
     }
+
+    the_input.classList.add(compare());
+
+    the_input.addEventListener('click', ev => {
+        if( the_input.classList.contains('answered') ) {
+            the_input.value = correct;
+            the_input.classList.remove('answered');
+            the_input.classList.add(compare());
+        } else if ( answered ) {
+            the_input.value = answered;
+            the_input.classList.remove('ground', 'correct', 'missed');
+            the_input.classList.add('answered');
+        }
+    });
 })();

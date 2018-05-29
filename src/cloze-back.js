@@ -9,9 +9,8 @@
 
     function compare(idx) {
         if( answered.length == 0 ) return 'ground';
-        let ans = answered[idx];
+        let ans = answered[idx], tru = correct[idx];
         if( !ans ) return 'missed';
-        let tru = correct[idx];
         if (!case_sens) {
             ans = ans.toLowerCase();
             tru = tru.map((e) => e.toLowerCase());
@@ -28,7 +27,7 @@
                 cloze.value = correct[idx].join(" / ");
                 cloze.classList.remove('answered');
                 cloze.classList.add(compare(idx));
-            } else {
+            } else if ( answered[idx] ) {
                 cloze.value = answered[idx];
                 cloze.classList.remove('ground', 'correct', 'missed');
                 cloze.classList.add('answered');
