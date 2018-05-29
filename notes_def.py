@@ -7,7 +7,7 @@ NOTES = [
         'fields': {
             'Header': "Basic card",
             'Intro': "Anyone who needs to remember things in their daily life need a program to practice remembering.",
-            'Question': "What is a program which makes remembering things easy.",
+            'Question': "What is the program which makes remembering things easy?",
             'Answer': "Anki",
             'Instruction': "Type-in answer.",
             'Explanation': "Because there are two simple concepts behind Anki: <em>active recall testing</em> and <em>spaced repetition</em>",
