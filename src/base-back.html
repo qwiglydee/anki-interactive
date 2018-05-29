@@ -1,0 +1,18 @@
+<div class="main back md-body1">
+    <div class="md-card">
+        {{> base-top}}
+        <div id="text" class="text">
+            <p>{{Question}}</p>
+        </div>
+        <hr>
+        <my-input readonly>{{Answer}}</my-input>
+    </div>
+    <div class="flex"></div>
+    {{#Explanation}}<p class="explanation">{{Explanation}}</p>{{/Explanation}}
+    {{#Reference}}<p class="reference"><a class="reference" href="{{Reference}}">{{Reference}}</a></p>{{/Reference}}
+</div>
+<script src="webcomponents-ce.js"></script>
+<script src="persistence.js"></script>
+<script src="utils.js"></script>
+<script src="my-input.js"></script>
+<script src="base-back.js"></script>

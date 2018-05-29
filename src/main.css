@@ -1,0 +1,375 @@
+.main {
+    position: absolute;
+    left: 0; right: 0; top:0; bottom: 0;
+    padding: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: var(--theme-background0);
+    overflow-y: auto;
+}
+
+#debug {
+    position: absolute;
+    z-index: 10;
+    top: 0; left: 0; right: 0;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: var(--theme-divider);
+}
+
+p {
+    margin: .5em 0;
+}
+
+.reference {
+    font-size: x-small;
+}
+
+.answer {
+    padding: .3ex;
+}
+
+
+.text .cloze.correct,
+.text .cloze.missed {
+    border-radius: 2px;
+    border-bottom: none;
+}
+
+li.ground {
+    border-bottom: none;
+}
+
+/* material design card */
+
+.md-card {
+    width: 36em; /* ~60 chars */
+    max-width: 100%;
+    min-width: 24em;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    box-shadow: var(--md-shadow-z2);
+    background-color: var(--theme-background1);
+}
+
+.md-card .header {
+    margin: 24px 0 16px;
+    padding: 0 16px;
+}
+
+.md-card .cover {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.md-card .cover img {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0; bottom:0; left:0; right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.md-card .cover .header {
+    position: absolute;
+    z-index: 1;
+    bottom: 0; left:0; right: 0;
+    margin: 0;
+    padding: 24px 16px 16px;
+}
+
+.md-card .text,
+.md-card > my-input {
+    display: block;
+    margin: 16px 0;
+    padding: 0 16px;
+}
+
+.md-card .text img {
+    display: block;
+    margin: 8px auto;
+}
+
+/* my-cloze */
+
+my-cloze {
+    display: inline;
+    padding: .15ex .5ex;
+    margin: 0 -.5ex; /* compensate */
+    border-bottom: 1px solid var(--theme-primary);
+    border-radius: 2px 2px 0 0 ;
+    color: var(--theme-primary-dark);
+}
+
+my-cloze.contracted {
+    padding-left: 0;
+}
+
+my-cloze:empty:after {
+    content:attr(placeholder);
+    color: var(--theme-placeholder);
+}
+
+my-cloze:hover {
+    background-color: var(--theme-hover);
+}
+
+my-cloze:focus {
+    background-color: var(--theme-focus);
+}
+
+my-cloze.ground {
+    color: var(--theme-foreground1);
+    background-color: transparent;
+    border-color: var(--theme-secondary);
+}
+
+my-cloze.correct {
+    color: var(--theme-foreground1);
+    background-color: var(--theme-correct);
+    border-color: var(--theme-correct-dark);
+}
+
+my-cloze.missed {
+    color: var(--theme-foreground1);
+    background-color: var(--theme-missed);
+    border-color: var(--theme-missed-dark);
+}
+
+/* my-choices */
+
+ul.md-list {
+    margin: 8px 0;
+}
+
+
+ul.md-list li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 48px;
+    padding-right: 16px;
+}
+
+.main > my-choices {
+    min-width: 24em;
+    border: 1px solid var(--theme-divider);
+    border-radius: 2px;
+}
+
+ul.md-list li:hover {
+    background-color: var(--theme-hover);
+}
+
+ul.md-list li:focus {
+    background-color: var(--theme-focus);
+}
+
+ul.md-list li.correct {
+    background-color: var(--theme-correct);
+}
+
+ul.md-list li.missed {
+    background-color: var(--theme-missed);
+}
+
+ul.md-list li.disabled {
+    color: var(--theme-disabled);
+}
+
+/* my-chips */
+
+ul.md-chips {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    min-width: 24em; /* ~40 chars */
+    max-width: 36em; /* ~60 chars */
+}
+
+ul.md-chips li {
+    display: flex;
+    align-items: center;
+    margin: 4px;
+    padding: 0 12px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--theme-fieldbox);
+    box-shadow: var(--md-shadow-z1);
+}
+
+ul.md-chips li[tabindex]:active {
+    background-color: var(--theme-active);
+    box-shadow: var(--md-shadow-z8);
+}
+
+ul.md-chips li:hover {
+    background-color: var(--theme-fieldbox-hover);
+}
+
+ul.md-chips li:focus {
+    background-color: var(--theme-focus);
+}
+
+ul.md-chips li label,
+ul.md-chips li i {
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--theme-foreground1);
+    font-style: normal;
+}
+
+.md-control {
+    width: 40px;
+    height: 40px;
+    /* 16px from left to icon, sum up to 72px */
+    margin-left: 5px;
+    margin-right: 27px;
+}
+
+.md-control__outline {
+    margin: 11px;
+    height: 18px;
+    width: 18px;
+    border: 2px solid var(--theme-primary);
+}
+
+.md-radio .md-control__outline {
+    border-radius: 50%;
+}
+
+.md-check .md-control__outline {
+    border-radius: 2px;
+}
+
+.md-control__inline {
+    display: none;
+}
+
+.selected .md-control__inline {
+    display: block;
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--theme-primary);
+}
+
+.md-radio .md-control__inline {
+    border-radius: 50%;
+}
+
+.md-check .md-control__inline {
+    border-radius: 2px;
+}
+
+.disabled .md-control__outline,
+[readonly] .md-control__outline {
+    border-color: var(--theme-disabled);
+}
+
+.ground .md-control__outline {
+    border-color: var(--theme-secondary);
+}
+.ground.selected .md-control__inline {
+    background-color: var(--theme-secondary);
+}
+
+.correct .md-control__outline {
+    border-color: var(--theme-correct-dark);
+}
+.correct.selected .md-control__inline {
+    background-color: var(--theme-correct-dark);
+}
+
+.missed .md-control__outline {
+    border-color: var(--theme-missed-dark);
+}
+.missed.selected .md-control__inline {
+    background-color: var(--theme-missed-dark);
+}
+
+
+/* my-input */
+
+.md-textbox {
+    flex: 0 0 36px;
+    height: 36px;
+    margin: 8px auto;
+    background-color: var(--theme-fieldbox);
+    border-radius: 4px;
+    padding: 8px 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.md-textbox hr {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    border: none;
+    margin: 0;
+    border-bottom: 2px solid var(--theme-primary);
+}
+
+.md-textbox input {
+    width: 20em; /* Betäubungsmittel-Verschreibungsverordnung */
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1rem;
+    font-weight: 400;
+    background: transparent;
+}
+
+.md-textbox
+{
+    background-color: var(--theme-fieldbox);
+}
+.md-textbox:hover
+{
+    background-color: var(--theme-fieldbox-hover);
+}
+
+.focus .md-textbox,
+.focus .md-textbox hr
+{
+    background-color: var(--theme-focus);
+}
+
+.ground .md-textbox,
+[readonly].ground .md-textbox hr {
+    border-color: var(--theme-secondary);
+}
+
+[readonly] .md-textbox hr
+{
+    border-color: var(--theme-divider);
+}
+
+.correct .md-textbox,
+.correct .md-textbox hr
+{
+    background-color: var(--theme-correct);
+    border-color: var(--theme-correct-dark);
+}
+
+.missed .md-textbox,
+.missed .md-textbox hr
+{
+    background-color: var(--theme-missed);
+    border-color: var(--theme-missed-dark);
+}

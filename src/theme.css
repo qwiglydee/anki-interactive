@@ -1,0 +1,89 @@
+.cover .header {
+    background-image: linear-gradient(to bottom, transparent 0%, hsla(199, 100%, 10%, .6) 24px, hsla(199, 100%, 10%, .95) 100%);
+    color: white;
+}
+
+input::-webkit-input-placeholder {
+    color: var(--theme-placeholder);
+}
+
+/* material design typography */
+
+body {
+    font-family: Roboto, sans-serif;
+    color: var(--theme-foreground1);
+}
+
+.md-headline {
+    font-size: 1.5rem; /* 24sp */
+    line-height: 2rem; /* 32sp */
+    font-weight: 400; /* regular */
+    letter-spacing: normal;
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.md-body1 {
+    font-size: .875rem; /* 14sp */
+    line-height: 1.25rem; /* 20sp */
+    font-weight: 400; /* regular */
+    letter-spacing: .04em;
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.md-body2 {
+    font-size: .875rem; /* 14sp */
+    line-height: 1.5rem; /* 24sp */
+    font-weight: 500; /* medium */
+    letter-spacing: .04em;
+    text-decoration: inherit;
+    text-transform: inherit;
+}
+
+.md-caption {
+    font-size: .75rem; /* 12sp */
+    line-height: 1.25rem; /* 20sp */
+    font-weight: 400; /* regular */
+    letter-spacing: .08em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    color: var(--theme-foreground2);
+}
+
+/* approx material light theme */
+
+:root {
+    --theme-primary: hsl(199, 100%, 50%);
+    --theme-primary-dark: hsl(199, 100%, 30%);
+    --theme-secondary: hsl(36, 100%, 50%);
+
+    --theme-correct: hsl(120, 80%, 80%);
+    --theme-correct-dark: hsl(120, 50%, 50%);
+    --theme-missed: hsl(50, 100%, 80%);
+    --theme-missed-dark: hsl(50, 50%, 50%);
+
+    --theme-background0: hsl(199, 100%, 95%);
+    --theme-background1: hsl(0, 0%, 98%);
+    --theme-foreground1: rgba(0, 0, 0, .87);
+    --theme-foreground2: rgba(0, 0, 0, .54);
+    --theme-divider: hsla(199, 100%, 30%, .12);
+    --theme-disabled: hsla(199, 100%, 30%, .26);
+    --theme-placeholder: hsla(199, 100%, 30%, .38);
+
+    --state-hover: .04;
+    --state-selected: .08;
+    --state-focus: .12;
+    --state-activated: .12;
+
+    --theme-fieldbox: rgba(0, 0, 0, .05);
+    --theme-fieldbox-hover: rgba(0, 0, 0, .09);
+    --theme-hover: rgba(0, 0, 0, var(--state-hover));
+    --theme-selected: rgba(0, 0, 0, var(--state-selected));
+    --theme-focus: rgba(0, 0, 0, var(--state-focus));
+    --theme-active: rgba(0,0,0, var(--state-activated));
+
+    --md-shadow-z1: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    --md-shadow-z2: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    --md-shadow-z8: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+}

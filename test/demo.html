@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>layout and style</title>
+    <link rel="stylesheet" href="../src/clean.css">
+    <link rel="stylesheet" href="../src/main.css">
+    <link rel="stylesheet" href="../src/theme.css">
+</head>
+<body>
+
+<div class="main front md-body1">
+    <div class="md-card">
+            <!--<div class="header">-->
+                <!--<h1 class="md-headline">Some fundamental concepts</h1>-->
+            <!--</div>-->
+        <div class="cover">
+            <div class="image">
+                <img src="anki-cover.png">
+            </div>
+            <div class="header">
+                <h1 class="md-headline">Some fundamental concepts</h1>
+            </div>
+        </div>
+        <div class="text intro">
+            <p>
+                Anki is a program which makes remembering things easy.
+                Because it is a lot more efficient than traditional study methods,
+                you can either greatly decrease your time spent studying,
+                or greatly increase the amount you learn.
+            </p>
+        </div>
+        <hr>
+        <div class="text">
+            <p class="my-clozen">
+                Empty clozes: <span class="cloze">[...]</span>, hint: <span class="cloze">[hint]</span>.
+                Editable clozes: <span class="cloze">[~]</span>, fill: <span class="cloze">[~fill]</span>.
+                <!--Ground clozes: ground: <span class="cloze ground">ground</span>, correct: <span class="cloze correct">correct</span>, missed: <span class="cloze missed">missed</span>.-->
+            </p>
+        </div>
+        <hr>
+        <my-input class=""
+                  placeholder="enter something"
+                  oninput="on_input(event);">
+        </my-input>
+        <my-choices type="checkbox"
+                   items="+ active recall | + spaced repetition | active repetition | spaced recall"
+                   onchange="on_choice_change(event)">
+        </my-choices>
+    </div>
+    <my-chips items="foo|bar|baz" removable
+              onselect="on_chip_select(event)" onremove="on_chip_remove(event)">
+    </my-chips>
+    <my-choices type="radio"
+               items="+ active recall | + spaced repetition | active repetition | spaced recall"
+               onchange="on_choice_change(event)">
+    </my-choices>
+    <div class="flex"></div>
+    <p class="back reference"><a class="reference" href="https://apps.ankiweb.net/docs/manual.html">https://apps.ankiweb.net/docs/manual.html</a>
+    </p>
+</div>
+<script src="../src/webcomponents-ce.js"></script>
+<script src="../src/persistence.js"></script>
+<script src="../src/random.js"></script>
+<script src="../src/utils.js"></script>
+<script>rng(42);</script>
+<script src="../src/my-input.js"></script>
+<script src="../src/my-chips.js"></script>
+<script src="../src/my-choices.js"></script>
+<script src="../src/my-clozen.js"></script>
+
+<script src="demo.js"></script>
+
+</body>
+</html>

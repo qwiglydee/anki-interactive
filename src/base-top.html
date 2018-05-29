@@ -1,0 +1,21 @@
+        {{^Cover}}{{#Header}}
+        <div class="header">
+            <h1 class="md-headline">{{Header}}</h1>
+        </div>
+        {{/Header}}{{/Cover}}
+        {{#Cover}}
+        <div class="cover">
+            {{Cover}}
+            {{#Header}}
+            <div class="header">
+                <h1 class="md-headline">{{Header}}</h1>
+            </div>
+            {{/Header}}
+        </div>
+        {{/Cover}}
+        {{#Intro}}
+        <div class="text intro">
+            <p>{{Intro}}</p>
+        </div>
+        <hr>
+        {{/Intro}}

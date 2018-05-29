@@ -1,0 +1,19 @@
+<div class="main front md-body1">
+    <div class="md-card">
+        {{> base-top}}
+        <div class="text">
+            <p class="my-clozen">{{cloze:Text}}</p>
+        </div>
+    </div>
+    <my-choices type="radio" items="{{Choices}}"></my-choices>
+    <div class="flex"></div>
+    {{#Instruction}}<p class="instruction">{{Instruction}}</p>{{/Instruction}}
+</div>
+<script src="webcomponents-ce.js"></script>
+<script src="persistence.js"></script>
+<script src="random.js"></script>
+<script src="utils.js"></script>
+<script>rng(new Date().valueOf())</script>
+<script src="my-clozen.js"></script>
+<script src="my-choices.js"></script>
+<script src="complete-front.js"></script>
