@@ -55,7 +55,7 @@ body {
 
 :root {
     --theme-primary: hsl(199, 100%, 50%);
-    --theme-primary-dark: hsl(199, 100%, 30%);
+    --theme-primary-dark: hsl(199, 100%, 20%);
     --theme-secondary: hsl(36, 100%, 50%);
 
     --theme-correct: hsl(120, 80%, 80%);
@@ -67,9 +67,9 @@ body {
     --theme-background1: hsl(0, 0%, 98%);
     --theme-foreground1: rgba(0, 0, 0, .87);
     --theme-foreground2: rgba(0, 0, 0, .54);
-    --theme-divider: hsla(199, 100%, 30%, .12);
-    --theme-disabled: hsla(199, 100%, 30%, .26);
-    --theme-placeholder: hsla(199, 100%, 30%, .38);
+    --theme-divider: hsla(199, 100%, 20%, .12);
+    --theme-disabled: hsla(199, 100%, 20%, .26);
+    --theme-placeholder: hsla(199, 100%, 20%, .38);
 
     --state-hover: .04;
     --state-selected: .08;
