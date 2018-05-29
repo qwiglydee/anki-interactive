@@ -8,7 +8,8 @@ import anki
 from anki import notes
 
 import apkgutils
-import config
+import models_def
+import notes_def
 
 THISDIR = os.path.dirname(os.path.abspath(__file__))
 DECKPATH = os.path.join(THISDIR, "build", "interactive.anki2")
@@ -39,7 +40,7 @@ sources = Sources()
 
 
 def create_models(coll):
-    for name, conf in config.MODELS.items():
+    for name, conf in models_def.MODELS.items():
         create_model(coll, name, conf)
     coll.save()
 
@@ -50,7 +51,7 @@ def create_model(coll, name, conf):
 
     for fld in conf['fields']:
         f = coll.models.newField(fld)
-        if fld in config.COMMON_FIELDS:
+        if fld in models_def.COMMON_FIELDS:
             f['sticky'] = True
         coll.models.addField(model, f)
     model['sortf'] = 0
@@ -65,7 +66,7 @@ def create_model(coll, name, conf):
 
 
 def create_notes(coll):
-    for conf in config.NOTES:
+    for conf in notes_def.NOTES:
         create_note(coll, conf)
     coll.save()
 
@@ -89,7 +90,7 @@ def build():
     if os.path.exists(APKGPATH):
         os.unlink(APKGPATH)
 
-    coll = apkgutils.create_deck(DECKPATH, config.DECKNAME)
+    coll = apkgutils.create_deck(DECKPATH, notes_def.DECKNAME)
 
     print("Building models...")
     create_models(coll)
