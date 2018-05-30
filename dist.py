@@ -21,10 +21,12 @@ def copy_files():
 
 
 def make_zip():
-    apkg = zipfile.ZipFile(ZIPFILE, "w")
+    addon = zipfile.ZipFile(ZIPFILE, "w")
     for entry in os.scandir(DSTDIR):
-        apkg.write(entry.path, entry.name)
-    apkg.close()
+        if entry.name in ('__pycache__', 'meta.json'):
+            continue
+        addon.write(entry.path, entry.name)
+    addon.close()
 
 
 if __name__ == "__main__":
