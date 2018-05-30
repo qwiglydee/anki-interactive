@@ -17,15 +17,18 @@ Detailed description is in [the wiki](https://github.com/qwiglydee/anki-interact
 
 ## Installation
 
-To install all the models or update them, install this TODO:ADDON. The addon will recreate all the models and demo deck in your collection. When some fixes or improvements are released, they will be delivered through add-on update and all existing templates will be replaced.
+To install all the models install the addon #`1819109876`. Whenever new version is released, the addon will already be updated and will deliver new versions of templates into your collection.
 
 ## Development
 
-The templates for models are compiled from a (huge) bunch of source files. To modify them it is necessary to clone this repo and rebuild all the models.
+The templates for models are compiled from a pretty big set of html, css and javascript files. In order to modify them you need to install anki sources, clone this repo and use compiling scripts.
 
- * script `build.py` compiles all templates into temporary collection into `build` dir.
- * script `dist.py` assembles the collection and other addon stuff into `dist` dir. You may symlink or copy this directory right into Anky's addons directory.
+For the scripts to work, PYTHONPATH should contains anki sources as well as all its requirements.
+
+Key points:
+ * `src` -- all the source files
+ * `models_def.py` -- configuration of models
+ * `notes_def.py` -- configuration of notes in demo deck
+ * `dist.py` -- script to compile all the stuff into apkg file, and put all the addon stuff.
+ * `dist` -- addon directory. After rebuild, you may symlink or copy this right into Anky's addons directory.
  
- For the scripts to work your PYTHONPATH should contains anki sources as well as all its requirements.
-
-
