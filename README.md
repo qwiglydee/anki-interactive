@@ -3,18 +3,17 @@
 
 # Interactive Cards for Anki
 
-The cards enable some interactive features to enter and edit answers and receive feedback, similar to what's often found in exercises of many other language-learning applications.
+The cards enable some interactive features to enter and edit answers and receive feedback, similar to what's often found in exercises of many language-learning applications.
 
-The features include:
- * typing answer into an input field, or selecting one or more answers from a set of provided options
- * typing cloze insertions right into a text with cloze deletions
- * changing already provided words
- * selecting words to insert from a list, optionally editing them
- * putting words in right order
+The features are: 
+* typing answer in input field
+* typing missing words right inside a text
+* selecting words or answers from list of options
+* placing words in proper order.
  
 Also, there is quite a design and user-friendly feedback.
 
-For details see TODO:WIKI
+Detailed description is in [the wiki](https://github.com/qwiglydee/anki-interactive/wiki)
 
 ## Installation
 
