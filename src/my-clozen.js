@@ -50,7 +50,7 @@ if( customElements.get('my-cloze') === undefined ) {
                             cloze.setAttribute('placeholder', text);
                         }
                     } else { // back side answers
-                        cloze.textContent = text;
+                        cloze.value = text;
                     }
                     element.replaceChild(cloze, child);
                     clozen.push(cloze);
