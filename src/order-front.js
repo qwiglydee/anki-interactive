@@ -1,4 +1,5 @@
 (function(){
+    DELIMITER = "\u2002"; // en-space
     let answer = [];
     Persistence.setItem('answer', answer); // list of cloze insertions
 
@@ -8,7 +9,7 @@
 
     hide(the_chips);
 
-        let autofocus_delay;
+    let autofocus_delay;
     function focus_cloze(cloze, idx) {
         // sticky focus
         if( autofocus_delay ) window.clearTimeout(autofocus_delay);
@@ -46,7 +47,7 @@
     the_chips.addEventListener('select', ev => {
         if( current_cloze ) {
             let ans = current_cloze.value;
-            ans = ans ? ans.split(' ') : [];
+            ans = ans ? ans.split(DELIMITER) : [];
 
             if( ev.detail ) {
                 ans.push(ev.detail);
@@ -54,9 +55,8 @@
                 ans.pop();
             }
 
-            ans = ans.join(' ');
-            current_cloze.value = ans;
-            answer[current_idx] = ans;
+            current_cloze.value = ans.join(DELIMITER);
+            answer[current_idx] = ans.join(' ');
             Persistence.setItem('answer', answer);
             focus_cloze();
         }
