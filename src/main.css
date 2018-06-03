@@ -125,7 +125,7 @@ my-cloze:hover {
     background-color: var(--theme-hover);
 }
 
-my-cloze:focus {
+my-cloze:focus, my-cloze.focus {
     background-color: var(--theme-focus);
 }
 

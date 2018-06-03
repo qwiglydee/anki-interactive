@@ -17,8 +17,12 @@
         // sticky focus
         if( autofocus_delay ) window.clearTimeout(autofocus_delay);
         if( cloze !== undefined ) {
+            if( current_cloze ) {
+                current_cloze.classList.remove('focus');
+            }
             current_cloze = cloze;
             current_idx = idx;
+            current_cloze.classList.add('focus');
             show(the_chips);
         }
         autofocus_delay = window.setTimeout(function() {
@@ -31,7 +35,10 @@
     function blur_cloze() {
         // delayed blur, overriden by autofocus
         if( autofocus_delay ) return;
-        autofocus_delay = window.setTimeout(function() {
+            autofocus_delay = window.setTimeout(function() {
+            if( current_cloze ) {
+                current_cloze.classList.remove('focus');
+            }
             current_cloze = undefined;
             current_idx = undefined;
             hide(the_chips);
