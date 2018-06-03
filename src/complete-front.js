@@ -3,7 +3,7 @@
     Persistence.setItem('answer', answer); // list of cloze insertions
 
     let the_choices = document.querySelector("my-choices");
-    let the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"));
+    let the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"), {placeholder: "……"});
     let current_cloze = null, current_idx;
 
     hide(the_choices);

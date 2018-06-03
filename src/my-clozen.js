@@ -8,7 +8,7 @@ if( customElements.get('my-cloze') === undefined ) {
          */
          connectedCallback() {
             this.tabIndex = "1";
-            this.setAttribute('placeholder', this.getAttribute('placeholder') || "...")
+            this.setAttribute('placeholder', this.getAttribute('placeholder') || "…")
             this.fill = this.getAttribute('fill');
             this._bind_events();
          }
@@ -32,12 +32,14 @@ if( customElements.get('my-cloze') === undefined ) {
             this.classList.toggle("contracted", val[0] === "'" || val[0] === "’");
          }
 
-         static parse(element) {
+         static parse(element, params) {
             /* parse anki-generated text and replace with my-cloze elements */
+            if(!params) params = {};
             let clozen = [];
             Array.from(element.childNodes).forEach(child => {
                 if( child.tagName === 'SPAN' && child.classList.contains('cloze') ) {
                     let cloze = document.createElement("my-cloze");
+                    if( params.placeholder ) cloze.setAttribute('placeholder', params.placeholder);
                     let text = child.textContent;
                     if (text[0] === '[') { // front side hints
                         text = text.substr(1, text.length - 2);

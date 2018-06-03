@@ -5,7 +5,7 @@ if( customElements.get('my-input') === undefined ) {
          */
         connectedCallback() {
             this.readonly = this.hasAttribute('readonly');
-            this.placeholder = this.getAttribute('placeholder') || "...";
+            this.placeholder = this.getAttribute('placeholder') || "…";
 
             let text = this.textContent.trim();
             this._render();
