@@ -17,6 +17,11 @@ if( customElements.get('my-cloze') === undefined ) {
             this.addEventListener('focus', e => {
                 if( !this.value && this.fill ) this.value = this.fill;
             });
+            this.addEventListener('keypress', e => {
+                if( e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
             this.addEventListener('input', e => {
                 let val = this.textContent;
                 this.classList.toggle("contracted", val[0] === "'" || val[0] === "’");

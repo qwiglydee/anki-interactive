@@ -1,5 +1,6 @@
 (function(){
     let answered = Persistence.getItem('answer') || []; // list of cloze insertions
+    answered = answered.map(s => s.stripspaces().trim());
 
     let the_clozen = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"));
     the_clozen.forEach(cloze => {cloze.contentEditable = false; });

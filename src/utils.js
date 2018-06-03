@@ -32,6 +32,10 @@ String.prototype.splitrim = function (sep) {
     });
 };
 
+String.prototype.stripspaces = function() {
+    return this.replace(/\s+/, ' ');
+};
+
 Array.prototype.shuffle = function () {
     // Fisher–Yates shuffle
     let rng = window.random;
