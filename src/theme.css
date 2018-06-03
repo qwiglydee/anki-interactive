@@ -11,47 +11,42 @@ input::-webkit-input-placeholder {
 
 body {
     font-family: Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     color: var(--theme-foreground1);
 }
 
-.md-headline {
-    font-size: 1.5rem; /* 24sp */
-    line-height: 2rem; /* 32sp */
-    font-weight: 400; /* regular */
-    letter-spacing: normal;
-    text-decoration: inherit;
-    text-transform: inherit;
-}
+.md-headline6 {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  text-decoration: inherit;
+  text-transform: inherit; }
 
 .md-body1 {
-    font-size: .875rem; /* 14sp */
-    line-height: 1.25rem; /* 20sp */
-    font-weight: 400; /* regular */
-    letter-spacing: .04em;
-    text-decoration: inherit;
-    text-transform: inherit;
-}
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.03125em;
+  text-decoration: inherit;
+  text-transform: inherit; }
 
 .md-body2 {
-    font-size: .875rem; /* 14sp */
-    line-height: 1.5rem; /* 24sp */
-    font-weight: 500; /* medium */
-    letter-spacing: .04em;
-    text-decoration: inherit;
-    text-transform: inherit;
-}
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.01786em;
+  text-decoration: inherit;
+  text-transform: inherit; }
 
 .md-caption {
-    font-size: .75rem; /* 12sp */
-    line-height: 1.25rem; /* 20sp */
-    font-weight: 400; /* regular */
-    letter-spacing: .08em;
-    text-decoration: inherit;
-    text-transform: inherit;
-    color: var(--theme-foreground2);
-}
-
-/* approx material light theme */
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.03333em;
+  text-decoration: inherit;
+  text-transform: inherit; }
 
 :root {
     --theme-primary: hsl(199, 100%, 50%);
