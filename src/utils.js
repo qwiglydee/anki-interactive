@@ -28,12 +28,12 @@ function debug(message) {
 
 String.prototype.splitrim = function (sep) {
     return this.split(sep).map(function (e) {
-        return e.replace(/<br\/?>/, ' ').trim();
+        return e.replace(/<br\/?>/g, ' ').trim();
     });
 };
 
 String.prototype.stripspaces = function() {
-    return this.replace(/\s+/, ' ');
+    return this.replace(/\s+/g, ' ');
 };
 
 Array.prototype.shuffle = function () {

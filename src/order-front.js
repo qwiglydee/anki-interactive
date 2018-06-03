@@ -59,7 +59,7 @@
     the_chips.addEventListener('select', ev => {
         if( current_cloze ) {
             let ans = answer[current_idx];
-            ans = ans ? ans.split(' ') : [];
+            ans = ans ? ans.split("\t") : [];
 
             if( ev.detail ) {
                 ans.push(ev.detail);
@@ -68,7 +68,7 @@
             }
 
             update_cloze(current_cloze, ans);
-            answer[current_idx] = ans.join(' ');
+            answer[current_idx] = ans.join("\t");
             Persistence.setItem('answer', answer);
             focus_cloze();
         }
