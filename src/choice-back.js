@@ -1,5 +1,7 @@
 (function(){
     let the_choices = document.querySelector("my-choices");
+    the_choices.shuffle(Persistence.getItem('seed') || new Date().valueOf());
+
     let answered = Persistence.getItem('answer') || []; // list of selected choices
 
     let items = "{{Choices}}".splitrim('|'),

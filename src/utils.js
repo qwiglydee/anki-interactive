@@ -9,17 +9,6 @@ if(!Persistence.isAvailable()) {
     };
 }
 
-function rng(seed) {
-    /* creating random generator with persistent seed */
-    window.random = new Random();
-    if( seed ) { // from front side
-        window.random.seed(seed);
-        Persistence.setItem('seed', seed);
-    } else {  // from back side
-        window.random.seed(Persistence.getItem('seed') || 42);
-    }
-}
-
 function debug(message) {
     let d = document.querySelector("#debug");
     if(!d) return;
@@ -34,16 +23,6 @@ String.prototype.splitrim = function (sep) {
 
 String.prototype.stripspaces = function() {
     return this.replace(/\s+/g, ' ');
-};
-
-Array.prototype.shuffle = function () {
-    // Fisher–Yates shuffle
-    let rng = window.random;
-    if( !rng ) throw "No random generator";
-    for (let i = this.length-1; i >= 1; i--) {
-        let j = Math.floor(rng.nextFloat() * i);
-        [this[i], this[j]] = [this[j], this[i]];
-    }
 };
 
 function placeCaretAtEnd(el) {

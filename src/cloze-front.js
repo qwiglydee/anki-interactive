@@ -23,6 +23,7 @@
 
     if( the_chips ) {
         hide(the_chips);
+        the_chips.shuffle();
 
         the_chips.addEventListener('select', ev => {
             if(current) {

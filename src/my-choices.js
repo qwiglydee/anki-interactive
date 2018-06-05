@@ -9,8 +9,15 @@ if( customElements.get('my-choices') === undefined ) {
             this.readonly = this.hasAttribute('readonly');
             this.type = this.getAttribute('type') || 'checkbox';
             this.choices = this.getAttribute('items').splitrim('|').map((i)=>i.replace(/^[\+\-]\s*/, ''));
-            this.choices.shuffle();
 
+            this._render();
+            if( !this.readonly ) {
+                this._bind_events();
+            }
+        }
+
+        shuffle(seed) {
+            this.choices.shuffle(seed);
             this._render();
             if( !this.readonly ) {
                 this._bind_events();

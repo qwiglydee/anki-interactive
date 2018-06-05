@@ -1,3 +1,8 @@
+<script src="persistence.js"></script>
+<script src="random.js"></script>
+<script src="utils.js"></script>
+<script src="webcomponents-ce.js"></script>
+<script src="my-choices.js"></script>
 <div class="main front md-body2">
     <div class="md-card">
         {{> base-top}}
@@ -10,10 +15,4 @@
     <div class="flex"></div>
     {{#Instruction}}<p class="instruction">{{Instruction}}</p>{{/Instruction}}
 </div>
-<script src="webcomponents-ce.js"></script>
-<script src="persistence.js"></script>
-<script src="random.js"></script>
-<script src="utils.js"></script>
-<script>rng(new Date().valueOf())</script>
-<script src="my-choices.js"></script>
 <script src="choice-front.js"></script>

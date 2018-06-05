@@ -3,6 +3,7 @@
     Persistence.setItem('answer', answer); // list of cloze insertions
 
     let the_choices = document.querySelector("my-choices");
+    the_choices.shuffle();
 
     let the_clozen = clozify(document.querySelector(".my-clozen"), {placeholder: "… … …"}),
         current = null;

@@ -9,8 +9,15 @@ if( customElements.get('my-chips') === undefined ) {
             this.readonly = this.hasAttribute('readonly');
             this.removable = this.hasAttribute('removable');
             this.items = this.getAttribute('items').splitrim('|');
-            this.items.shuffle();
 
+            this._render();
+            if( !this.readonly ) {
+                this._bind_events();
+            }
+        }
+
+        shuffle(seed) {
+            this.items.shuffle(seed);
             this._render();
             if( !this.readonly ) {
                 this._bind_events();
