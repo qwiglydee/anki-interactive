@@ -14,6 +14,7 @@ The features are:
 Also, there is quite a design and user-friendly feedback.
 
 Detailed description is in [the wiki](https://github.com/qwiglydee/anki-interactive/wiki)
+Discussion goes [here at reddit](https://www.reddit.com/r/Anki/comments/8n4qt1/anki21_interactive_cards_for_language_learning/)
 
 ## Installation
 
