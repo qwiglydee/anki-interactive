@@ -8,7 +8,7 @@ if( customElements.get('my-cloze') === undefined ) {
          */
          connectedCallback() {
             this.tabIndex = "1";
-            this.setAttribute('placeholder', this.getAttribute('placeholder') || "…")
+            this.placeholder = this.getAttribute('placeholder') || "…";
             this.fill = this.getAttribute('fill');
             this._bind_events();
          }

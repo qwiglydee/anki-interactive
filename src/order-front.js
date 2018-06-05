@@ -3,13 +3,17 @@
     Persistence.setItem('answer', answer); // list of cloze insertions
 
     let the_chips = document.querySelector("my-chips");
-    let the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"));
+    let the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"), {placeholder: "… … …"});
     let current_cloze, current_idx;
 
     hide(the_chips);
 
     function update_cloze(cloze, words) {
-        cloze.value = "…" + words.join("\u0009") + "…";
+        if( words.length ) {
+            cloze.value = "…" + words.join("\u0009") + "…";
+        } else {
+            cloze.value = null;
+        }
     }
 
     let autofocus_delay;
@@ -47,7 +51,6 @@
     }
 
     the_clozes.forEach((cloze, idx) => {
-        update_cloze(cloze, []);
         cloze.addEventListener('focus', ev => {
             focus_cloze(cloze, idx);
         });
