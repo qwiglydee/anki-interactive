@@ -8,7 +8,7 @@ if( customElements.get('my-cloze') === undefined ) {
          */
          connectedCallback() {
             this.tabIndex = "1";
-            this.placeholder = this.getAttribute('placeholder') || "…";
+            if( !this.getAttribute('placeholder') ) this.setAttribute('placeholder', "…")
             this.fill = this.getAttribute('fill');
             this._bind_events();
          }
@@ -48,12 +48,12 @@ if( customElements.get('my-cloze') === undefined ) {
                     let text = child.textContent;
                     if (text[0] === '[') { // front side hints
                         text = text.substr(1, text.length - 2);
-                        if ( text && text !== '...') { // non default hint
-                            if (text[0] === '~') { // editable cloze
-                                text = text.substr(1).trim();
-                                cloze.contentEditable = true;
-                                cloze.setAttribute('fill', text);
-                            }
+                        if (text[0] === '~') { // editable cloze
+                            text = text.substr(1).trim();
+                            cloze.contentEditable = true;
+                            if( text ) cloze.setAttribute('fill', text);
+                        }
+                        if ( text && text !== '...') { // placeholder/prefill
                             cloze.setAttribute('placeholder', text);
                         }
                     } else { // back side answers

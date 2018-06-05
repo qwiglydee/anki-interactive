@@ -24,13 +24,11 @@
     the_choices.items[3].classList.add('disabled');
 
 
-    var the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"));
+    var the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"), {placeholder: "???"});
 
     the_clozes.forEach(e => {
         if( e.value ) { // ground/correct/missed
             e.classList.add(e.value);
-        } else {
-            e.contentEditable = true;
         }
         e.addEventListener('focus', ev => {
             console.debug("cloze focus", ev, ev.target);
