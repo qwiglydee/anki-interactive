@@ -2,10 +2,9 @@
     let answered = Persistence.getItem('answer') || []; // list of cloze insertions
     answered = answered.map(s => s.stripspaces().trim());
 
-    let the_clozen = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"));
-    the_clozen.forEach(cloze => {cloze.contentEditable = false; });
+    let the_clozen = clozify(document.querySelector(".my-clozen"));
 
-    let correct = the_clozen.map(cloze => cloze.value).map(val => val ? val.splitrim('/') : []);
+    let correct = the_clozen.items.map(cloze => cloze.value).map(val => val ? val.splitrim('/') : []);
     let case_sens = answered && answered.filter((e) => e && e.toLowerCase() !== e).length > 0;
 
     function compare(idx) {
@@ -20,7 +19,7 @@
         return 'correct';
     }
 
-    the_clozen.forEach((cloze, idx) => {
+    the_clozen.items.forEach((cloze, idx) => {
         cloze.classList.add(compare(idx));
 
         cloze.addEventListener('click', ev => {

@@ -3,55 +3,29 @@
     Persistence.setItem('answer', answer); // list of cloze insertions
 
     let the_choices = document.querySelector("my-choices");
-    let the_clozes = customElements.get('my-cloze').parse(document.querySelector(".my-clozen"), {placeholder: "… … …"});
-    let current_cloze = null, current_idx;
+
+    let the_clozen = clozify(document.querySelector(".my-clozen"), {placeholder: "… … …"}),
+        current = null;
 
     hide(the_choices);
 
-    let autofocus_delay;
-    function focus_cloze(cloze, idx) {
-        // sticky focus
-        if( autofocus_delay ) window.clearTimeout(autofocus_delay);
-        if( cloze !== undefined ) {
-            current_cloze = cloze;
-            current_idx = idx;
-            show(the_choices);
-        }
-        autofocus_delay = window.setTimeout(function() {
-            current_cloze.focus();
-            if( current_cloze.contentEditable ) placeCaretAtEnd(current_cloze);
-            autofocus_delay = undefined;
-        }, 100);
-    }
-    function blur_cloze() {
-        // delayed blur, overriden by autofocus
-        if( autofocus_delay ) return;
-        autofocus_delay = window.setTimeout(function() {
-            current_cloze = undefined;
-            current_idx = undefined;
-            hide(the_choices);
-            autofocus_delay = undefined;
-        }, 150);
-    }
+    the_clozen.addEventListener('focus', ev => {
+        current = ev.detail;
+        show(the_choices);
+    });
 
-
-
-    the_clozes.forEach((cloze, idx) => {
-        cloze.addEventListener('focus', ev => {
-            focus_cloze(cloze, idx);
-        });
-        cloze.addEventListener('blur', ev => {
-            blur_cloze();
-        });
-    })
+    the_clozen.addEventListener('blur', ev => {
+        current = null;
+        hide(the_choices);
+    });
 
     the_choices.addEventListener('change', ev => {
-        if(current_cloze) {
+        if(current) {
             let val = ev.detail[0];
-            current_cloze.value = val;
-            answer[current_idx] = val;
+            current.cloze.value = val;
+            current.cloze.focus();
+            answer[current.idx] = val;
             Persistence.setItem('answer', answer);
-            focus_cloze();
         }
     });
 

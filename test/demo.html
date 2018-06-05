@@ -33,7 +33,10 @@
         </div>
         <hr>
         <div class="text">
-            <p class="my-clozen">
+            <p class="my-clozen"
+               onfocus="on_cloze_focus(event)"
+               onblur="on_cloze_blur(event)"
+                oninput="on_cloze_input(event)">
                 Anki is a program which makes remembering things easy.
                 Anki is a program which makes remembering things easy.
                 <br>
@@ -50,10 +53,10 @@
                   placeholder="enter something"
                   oninput="on_input(event);">
         </my-input>
-        <my-choices type="checkbox"
-                   items="+ active recall | + spaced repetition | active repetition | spaced recall"
-                   onchange="on_choice_change(event)">
-        </my-choices>
+        <!--<my-choices type="checkbox"-->
+                   <!--items="+ active recall | + spaced repetition | active repetition | spaced recall"-->
+                   <!--onchange="on_choice_change(event)">-->
+        <!--</my-choices>-->
     </div>
     <my-chips items="foo|bar|baz" removable
               onselect="on_chip_select(event)" onremove="on_chip_remove(event)">
