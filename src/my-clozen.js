@@ -11,6 +11,7 @@ if( customElements.get('my-cloze') === undefined ) {
             if( !this.getAttribute('placeholder') ) this.setAttribute('placeholder', "…")
             this.fill = this.getAttribute('fill');
             this._bind_events();
+            this._contracted(this.textContent);
          }
 
          _bind_events() {
@@ -23,22 +24,21 @@ if( customElements.get('my-cloze') === undefined ) {
                 }
             });
             this.addEventListener('input', e => {
-                let val = this.textContent;
-                this.classList.toggle("contracted", val[0] === "'" || val[0] === "’");
+                this._contracted(this.textContent);
             });
          }
 
          get value() {
-            return this.textContent;
+            return this.textContent.trim();
          }
 
          set value(val) {
             this.textContent = val;
-            this.classList.toggle("contracted", val[0] === "'" || val[0] === "’");
+            this._contracted(val);
          }
 
-         static parse(element, params) {
-            /* parse anki-generated text and replace with my-cloze elements */
+         _contracted(val) {
+            this.classList.toggle("contracted", val && (val[0] === "'" || val[0] === "’"));
          }
     });
 }
