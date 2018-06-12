@@ -16,10 +16,12 @@ function debug(message) {
 }
 
 String.prototype.splitrim = function (sep) {
-    return this.split(sep).map(function (e) {
-        return e.replace(/<br\/?>/g, ' ').trim();
-    });
+    return this.split(sep).map(e => e.trim());
 };
+
+function split_choices(str) {
+    return str.splitrim(/<br>|\|/).filter(e => e !== "");
+}
 
 String.prototype.stripspaces = function() {
     return this.replace(/\s+/g, ' ');

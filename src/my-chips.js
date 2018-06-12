@@ -8,7 +8,7 @@ if( customElements.get('my-chips') === undefined ) {
         connectedCallback() {
             this.readonly = this.hasAttribute('readonly');
             this.removable = this.hasAttribute('removable');
-            this.items = this.getAttribute('items').splitrim('|');
+            this.items = split_choices(this.getAttribute('items'));
 
             this._render();
             if( !this.readonly ) {

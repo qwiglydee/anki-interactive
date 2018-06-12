@@ -4,7 +4,7 @@
 
     let answered = Persistence.getItem('answer') || []; // list of selected choices
 
-    let items = "{{Choices}}".splitrim('|'),
+    let items = split_choices("{{Choices}}"),
         items_p = items.filter((i) => i[0] == '+').map((i)=>i.replace(/^\+\s*/, '')),
         items_m = items.filter((i) => i[0] == '-').map((i)=>i.replace(/^\-\s*/, ''));
     let correct = items_p.length ? items_p : items_m;
