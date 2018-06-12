@@ -40,7 +40,7 @@
 
     function update_cloze(cloze, words) {
         if( words.length ) {
-            cloze.value = "…" + words.join("\u0009") + "…";
+            cloze.value = words.join("\u0009") + "…";
         } else {
             cloze.value = null;
         }
