@@ -8,7 +8,7 @@ if( customElements.get('my-choices') === undefined ) {
         connectedCallback() {
             this.readonly = this.hasAttribute('readonly');
             this.type = this.getAttribute('type') || 'checkbox';
-            this.choices = this.getAttribute('items').splitrim('|').map((i)=>i.replace(/^[\+\-]\s*/, ''));
+            this.choices = this.getAttribute('items').splitrim(/<br>|\|/).map((i)=>i.replace(/^[\+\-]\s*/, ''));
 
             this._render();
             if( !this.readonly ) {

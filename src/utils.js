@@ -16,9 +16,7 @@ function debug(message) {
 }
 
 String.prototype.splitrim = function (sep) {
-    return this.split(sep).map(function (e) {
-        return e.replace(/<br\/?>/g, ' ').trim();
-    });
+    return this.split(sep).map(e => e.trim()).filter(e => e !== "");
 };
 
 String.prototype.stripspaces = function() {
