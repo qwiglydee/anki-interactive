@@ -7,9 +7,8 @@ if( customElements.get('my-input') === undefined ) {
             this.readonly = this.hasAttribute('readonly');
             this.placeholder = this.getAttribute('placeholder') || "…";
 
-            let text = this.textContent.trim();
             this._render();
-            if( text ) this.value = text;
+            this.value = (this.getAttribute('value') || "").trim();
 
             if(!this.readonly) {
                 this._bind_events();
