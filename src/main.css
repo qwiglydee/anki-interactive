@@ -1,20 +1,9 @@
 .main {
-    position: absolute;
-    left: 0; right: 0; top:0; bottom: 0;
     padding: 8px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     background-color: var(--theme-background0);
-    overflow-y: auto;
-}
-
-#debug {
-    position: absolute;
-    z-index: 10;
-    top: 0; left: 0; right: 0;
-    background-color: rgba(0,0,0,.5);
-    color: white;
 }
 
 hr {

@@ -1,7 +1,20 @@
+
 html, body, *, #content, #qa {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* webanki: body main.container > div#quiz > div#qa_box.card > div#qa */
+/* linux-edit: body.card > div#qa */
+/* linux-preview|review: body > div#qa || body.card > div#qa */
+/* android: body.card > div#content > div.question || body.card > div#content > div.answer */
+
+body > div#qa .main,
+body > div#content .main {
+ position: absolute;
+ top: 0; bottom: 0; left: 0; right: 0;
+ overflow: auto;
 }
 
 ul {
