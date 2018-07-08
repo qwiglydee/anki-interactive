@@ -18,7 +18,7 @@ Discussion goes [here at reddit](https://www.reddit.com/r/Anki/comments/8n4qt1/a
 
 ## Installation
 
-To install all the models install the addon #`1819109876`. Whenever new version is released, the addon will already be updated and will deliver new versions of templates into your collection.
+Packaged version is [at the dist folder](https://github.com/qwiglydee/anki-interactive/raw/master/dist/interactive.apkg)
 
 ## Development
 
