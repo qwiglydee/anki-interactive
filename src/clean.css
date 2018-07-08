@@ -1,3 +1,7 @@
+html,body {
+  display: block;
+  height: 100%;
+}
 
 html, body, *, #content, #qa {
     box-sizing: border-box;
