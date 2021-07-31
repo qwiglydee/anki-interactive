@@ -1,5 +1,18 @@
 
-> This software is very beta. It's been tested only on linux Anki v2.1 and AnkiDroid v2.8.3. Older Anki won't be supported.
+> The project is abandoned 
+> 
+> The reasons are that Anki itself is not designed for such kind of content:
+> - not supposed to be cross-platform (each variation have it's own peculiariries)
+> - interactive stuff not supported (no good support for javascript)
+> - custom feedback not supported (no way to keep/show answer)
+> - internals are not documented and may break in any version
+> 
+> All those make developing for ani a pain in the arse.
+>
+
+>
+> Maybe, some parts of these cards will be released in another project
+> 
 
 # Interactive Cards for Anki
 
