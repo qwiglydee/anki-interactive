@@ -1,5 +1,3 @@
-DECKNAME = "Interactive Demo"
-
 NOTES = [
     {
         'model': 'InteractiveBase',
@@ -90,4 +88,3 @@ NOTES = [
         }
     }
 ]
-

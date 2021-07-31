@@ -1,12 +1,8 @@
-import os
+from pathlib import Path
 
-THISDIR = os.path.dirname(os.path.abspath(__file__))
-SRCDIR = os.path.join(THISDIR, "src")
-BUILDDIR = os.path.join(THISDIR, "build")
-DECKFILE = os.path.join(BUILDDIR, "interactive.anki2")
-APKGFILE = os.path.join(BUILDDIR, "interactive.apkg")
-ADDONDIR = os.path.join(BUILDDIR, "addon")
-ADDONFILE = os.path.join(BUILDDIR, "addon.zip")
-
-
-
+WORKDIR = Path(__file__).parent
+SRCDIR = WORKDIR / "src"
+BUILDDIR = WORKDIR / "build"
+DISTDIR = WORKDIR / "dist"
+DECKFILE = BUILDDIR / "interactive.anki2"
+APKGFILE = DISTDIR / "interactive.apkg"

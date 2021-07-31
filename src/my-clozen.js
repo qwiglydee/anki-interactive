@@ -48,7 +48,7 @@ function clozify(root, params) {
      * replaces spans with my-cloze elements, tracks focused cloze with delayed blur.
      *
      * @param {Element} root
-     * @param {{placeholder: String, editable: boolean}} params
+     * @param {placeholder: String, editable: boolean} params
      *
      * @property {Array[MyCloze]} items
      *
